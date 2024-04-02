@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    padding-left: 20px;
 }
 
 section h1{
@@ -11,4 +12,77 @@ section h1{
     font-size: 50px;
     text-align: center;
 }
+/*Utility classes*/
+.animate {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
 
+.animate.animation--delay-1s {
+    animation-delay: 1s;
+}
+.animate.animation--infinity{
+    animation-iteration-count: infinite;
+}
+
+.animate.animation--fast{
+    animation-duration: 1s;
+}
+
+.animate.animation--slow {
+    animation-duration: 3s;
+}
+
+/* Animations */
+@keyframes enterLeft {
+    from{
+        transform: translate(-100px);
+    }
+
+    to{
+        transform: translate(0);
+    }
+}
+.keyframe{
+    animation-name: Tranimation; /*For selecting the keyframe name we want to use for the animation*/
+    animation-duration: 1s; /*Sets the time it takes the keyframe to complete one lap*/
+    animation-timing-function: ease-in; /*Describes how the animation will progress over one cycle of its duration.*/
+    animation-delay: 1s ;
+    animation-iteration-count: 1; /*Connotes the number of laps that must be completed before the animation stops*/
+    animation-direction: normal;
+    animation-fill-mode: none;
+}
+.enterLeft{
+    animation-name: enterLeft;
+    animation-timing-function: ease-in;
+}
+
+@keyframes enterRight {
+    from{
+        transform: translate(100px);
+    }
+
+    to{
+        transform: translate(0);
+    }
+    
+}
+.enterRight{
+    animation-name: enterRight;
+    animation-timing-function: ease-in;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.rotate{
+    animation-name: rotate;
+    animation-timing-function: linear;
+}
